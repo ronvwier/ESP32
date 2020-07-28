@@ -7,7 +7,7 @@ def check():
     nic.active(True)
     if not nic.isconnected():
         # enable station interface and connect to WiFi access point
-        cfg = cfgRead("wifi")
+        cfg = config.cfgRead("wifi")
         nic.connect(cfg['ssid'],cfg['password'])
         while not nic.isconnected():
             print('not connected')
